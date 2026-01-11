@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TEKOMI Cafe & Resto Design System - Earthy Elegant */
+
+@layer base {
+  :root {
+    /* Earthy Color Palette */
+    --background: 35 30% 96%;
+    --foreground: 20 15% 15%;
+
+    --card: 35 25% 94%;
+    --card-foreground: 20 15% 15%;
+
+    --popover: 35 30% 96%;
+    --popover-foreground: 20 15% 15%;
+
+    /* Espresso Brown */
+    --primary: 24 32% 18%;
+    --primary-foreground: 35 30% 96%;
+
+    /* Olive Green */
+    --secondary: 90 15% 36%;
+    --secondary-foreground: 35 30% 96%;
+
+    /* Warm Beige */
+    --muted: 35 20% 90%;
+    --muted-foreground: 20 10% 40%;
+
+    /* Gold Accent */
+    --accent: 36 35% 57%;
+    --accent-foreground: 20 15% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 35 30% 96%;
+
+    --border: 35 15% 85%;
+    --input: 35 15% 85%;
+    --ring: 24 32% 18%;
+
+    --radius: 0.5rem;
+
+    /* Custom TEKOMI Variables */
+    --cream: 35 30% 96%;
+    --espresso: 24 32% 18%;
+    --olive: 90 15% 36%;
+    --charcoal: 0 0% 18%;
+    --gold: 36 35% 57%;
+    --warm-gray: 30 10% 60%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(35 30% 96% / 0) 0%, hsl(35 30% 96% / 0.8) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 0% / 0.3) 0%, hsl(0 0% 0% / 0.7) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(36 35% 57%) 0%, hsl(36 45% 45%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(24 32% 18% / 0.1);
+    --shadow-elevated: 0 10px 40px -10px hsl(24 32% 18% / 0.15);
+    --shadow-glow: 0 0 30px hsl(36 35% 57% / 0.2);
+
+    /* Typography */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+
+    /* Sidebar (keeping defaults) */
+    --sidebar-background: 35 25% 94%;
+    --sidebar-foreground: 20 15% 15%;
+    --sidebar-primary: 24 32% 18%;
+    --sidebar-primary-foreground: 35 30% 96%;
+    --sidebar-accent: 35 20% 90%;
+    --sidebar-accent-foreground: 20 15% 15%;
+    --sidebar-border: 35 15% 85%;
+    --sidebar-ring: 36 35% 57%;
+  }
+
+  .dark {
+    --background: 20 15% 8%;
+    --foreground: 35 30% 96%;
+
+    --card: 20 15% 12%;
+    --card-foreground: 35 30% 96%;
+
+    --popover: 20 15% 10%;
+    --popover-foreground: 35 30% 96%;
+
+    --primary: 35 30% 96%;
+    --primary-foreground: 20 15% 10%;
+
+    --secondary: 90 15% 30%;
+    --secondary-foreground: 35 30% 96%;
+
+    --muted: 20 10% 20%;
+    --muted-foreground: 35 20% 70%;
+
+    --accent: 36 40% 50%;
+    --accent-foreground: 20 15% 10%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 35 30% 96%;
+
+    --border: 20 10% 20%;
+    --input: 20 10% 20%;
+    --ring: 35 30% 96%;
+
+    --cream: 20 15% 8%;
+    --espresso: 35 30% 96%;
+    --charcoal: 35 30% 96%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  /* Gradient utilities */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  /* Shadow utilities */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Custom animations */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-elevated;
+  }
+
+  /* Image zoom on hover */
+  .img-zoom {
+    @apply overflow-hidden;
+  }
+
+  .img-zoom img {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .img-zoom:hover img {
+    @apply scale-110;
+  }
+
+  /* Underline animation */
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-current scale-x-0 origin-right transition-transform duration-300 ease-out;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
